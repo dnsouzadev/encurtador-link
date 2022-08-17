@@ -5,17 +5,18 @@ namespace App\Ulvis;
 class UrlShortener {
 
   // metodo para encurtar uma url
-  public static function short($url){
+  public static function short($url, $custom = null){
     //Parâmetros da url
     $params = [
       'url' => $url,
+      'custom' => $custom
     ];
 
     // executa a request na api do ulvis
-    $response = self::send($params);
+    $response = self::send(array_filter($params));
 
     // retorna a url encurtada
-    return $response['data']['url'] ?? null
+    return $response['data']['url'] ?? null;
   }
 
     // método responsável por executar a request nas apido ulvis
