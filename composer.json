@@ -1,0 +1,8 @@
+{
+  "name": "dsouza-dev/url-shortener",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  }
+}
